@@ -18,7 +18,7 @@ export default class UserController {
       const  { user, date } = req.body;
       console.log(date)
       const created = await this.service.create({user, date});
-      return res.status(StatusCodes.OK).json(created);
+      return res.status(StatusCodes.CREATED).json(created);
     } catch (error) {
       next(error);
     }

@@ -30,7 +30,7 @@ export default class UserController {
     try {
       const  { login, password, name } = req.body;
       const token = await this.service.newUser({ login, password, name })
-      return res.status(StatusCodes.OK).json(token);
+      return res.status(StatusCodes.CREATED).json(token);
     } catch (error) {
       next(error);
     }
