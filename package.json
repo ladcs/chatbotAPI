@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "description": "user to login the chatbot",
   "main": "index.ts",
-  "engines": {
-    "node": "18"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "docker": "prestart",
-    "prestart": "npx prisma generate && npx prisma migrate dev --name init",
+    "prestart": "npx prisma generate && npx prisma migrate deploy",
     "start": "tsx src/server.ts",
     "dev": "tsx watch src/server.ts"
   },
